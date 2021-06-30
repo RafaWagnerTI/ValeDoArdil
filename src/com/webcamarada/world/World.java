@@ -31,14 +31,14 @@ public class World {
 					int pixelAtual = pixels[xx + (yy*WIDTH)];
 					tiles[xx + (yy*WIDTH)] = new FloorTile(xx*16, yy*16,Tile.TILE_FLOOR);
 					switch(pixelAtual){
-						case 0xFF000000: tiles[xx + (yy*WIDTH)] = new FloorTile(xx*16, yy*16,Tile.TILE_FLOOR); break;//Chão
+						case 0xFF000000: tiles[xx + (yy*WIDTH)] = new FloorTile(xx*16, yy*16,Tile.TILE_FLOOR); break;//Chï¿½o
 						case 0xFFFFFFFF: tiles[xx + (yy*WIDTH)] = new WallTile(xx*16, yy*16,Tile.TILE_WALL);   break;//Parede
 						case 0xFFFF6A00: Game.player.setX(xx*16); Game.player.setY(yy*16);                     break;//Jogador
 						case 0xFF007F0E: Game.entities.add(new Lifepack(xx*16, yy*16, 16, 16, Entity.LIFEPACK_EN)); break;//Vida
 						case 0xFF00137F: Game.entities.add(new Weapon(xx*16, yy*16, 16, 16, Entity.WEAPON_EN));break;
-						case 0xFFFFD800: Game.entities.add(new Bullet(xx*16, yy*16, 16, 16, Entity.BULLET_EN));break;//Munição
-						case 0xFFFF0000: Game.entities.add(new Enemy(xx*16, yy*16, 16, 16, Entity.ENEMY_EN));  break;//Inimigo
-						default: tiles[xx + (yy*WIDTH)] = new FloorTile(xx*16, yy*16,Tile.TILE_FLOOR);         break;//Chão
+						case 0xFFFFD800: Game.entities.add(new Bullet(xx*16, yy*16, 16, 16, Entity.BULLET_EN));break;//Muniï¿½ï¿½o
+						case 0xFFFF0000: Enemy en = new Enemy(xx*16, yy*16, 16, 16, Entity.ENEMY_EN); Game.entities.add(en); Game.enemies.add(en);  break;//Inimigo
+						default: tiles[xx + (yy*WIDTH)] = new FloorTile(xx*16, yy*16,Tile.TILE_FLOOR);         break;//Chï¿½o
 					}
 						
 				}
