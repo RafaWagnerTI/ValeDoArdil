@@ -126,13 +126,23 @@ public class Game extends Canvas implements Runnable, KeyListener {
 	public void keyPressed(KeyEvent e) {
 		if(e.getKeyCode() == KeyEvent.VK_RIGHT || e.getKeyCode() == KeyEvent.VK_D) {
 			player.setRight(true);
+			player.setLeft(false);
+			player.setUp(false);
+			player.setDown(false);
 		}else if(e.getKeyCode() == KeyEvent.VK_LEFT || e.getKeyCode() == KeyEvent.VK_A){
+			player.setRight(false);
 			player.setLeft(true);
-		}
-	
-		if(e.getKeyCode() == KeyEvent.VK_UP || e.getKeyCode() == KeyEvent.VK_W) {
+			player.setUp(false);
+			player.setDown(false);
+		}else if(e.getKeyCode() == KeyEvent.VK_UP || e.getKeyCode() == KeyEvent.VK_W) {
+			player.setRight(false);
+			player.setLeft(false);
 			player.setUp(true);
+			player.setDown(false);
 		}else if(e.getKeyCode() == KeyEvent.VK_DOWN || e.getKeyCode() == KeyEvent.VK_S) {
+			player.setRight(false);
+			player.setLeft(false);
+			player.setUp(false);
 			player.setDown(true);
 		}
 
@@ -144,9 +154,7 @@ public class Game extends Canvas implements Runnable, KeyListener {
 			player.setRight(false);
 		}else if(e.getKeyCode() == KeyEvent.VK_LEFT || e.getKeyCode() == KeyEvent.VK_A){
 			player.setLeft(false);
-		}
-	
-		if(e.getKeyCode() == KeyEvent.VK_UP || e.getKeyCode() == KeyEvent.VK_W) {
+		}else if(e.getKeyCode() == KeyEvent.VK_UP || e.getKeyCode() == KeyEvent.VK_W) {
 			player.setUp(false);
 		}else if(e.getKeyCode() == KeyEvent.VK_DOWN || e.getKeyCode() == KeyEvent.VK_S) {
 			player.setDown(false);

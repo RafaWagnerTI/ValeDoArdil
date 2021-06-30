@@ -4,6 +4,7 @@ import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 
 import com.webcamarada.main.Game;
+import com.webcamarada.world.Camera;
 
 public class Entity {
 	
@@ -57,7 +58,7 @@ public class Entity {
 	}
 	
 	public void render (Graphics g) {
-		g.drawImage(sprite, (int)this.getX(), (int)this.getY(), null);
+		g.drawImage(sprite, (int)this.getX() - Camera.x, (int)this.getY() - Camera.y, null);
 		
 	}
 	
